@@ -1,0 +1,6 @@
+[App]
+  name="spring-boot-sample"
+
+[Db]
+  jdbc=""
+  table="Purchase"
