@@ -1,11 +1,16 @@
 package parser
 
 import (
+	"fmt"
+
 	"github.com/BurntSushi/toml"
 )
 
 func Parse(fileName string) UserInput {
 	var userInput UserInput
-	toml.DecodeFile(fileName, &userInput)
+	_, err := toml.DecodeFile(fileName, &userInput)
+	if err != nil {
+		fmt.Println("err:", err)
+	}
 	return userInput
 }

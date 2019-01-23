@@ -1,5 +1,5 @@
 [App]
-  name="spring-boot-sample"
+  name="spring-boot-generator"
 
 [Db]
   jdbc=""
