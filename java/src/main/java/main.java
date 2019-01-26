@@ -1,5 +1,7 @@
 package spg;
 
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 /**
  * Hello world!
  *
