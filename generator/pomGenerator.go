@@ -10,8 +10,6 @@ import (
 
 var JpaDependency = Dependency{GroupId: "org.springframework.boot", ArtifactId: "spring-boot-starter-data-jpa"}
 
-//"<dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-data-jpa</artifactId></dependency>"
-
 // GeneratePom =  touch pom
 func GeneratePom(userInput parser.UserInput) {
 	fileName := build.Default.GOPATH + "/src/github.com/kcwebapply/spg/java/pom.xml"
@@ -32,9 +30,8 @@ func setDependency(content string, dependency Dependency) string {
 type Dependency struct {
 	GroupId    string
 	ArtifactId string
-	Version    string
 }
 
 func (dependency *Dependency) toString() string {
-	return fmt.Sprintf("  <dependency>\n        <groupId>%s</groupId>\n        <artifactId>%s</artifactId>\n        <version>%s</version>\n    </dependency>", dependency.GroupId, dependency.ArtifactId, dependency.Version)
+	return fmt.Sprintf("  <dependency>\n        <groupId>%s</groupId>\n        <artifactId>%s</artifactId>\n    </dependency>", dependency.GroupId, dependency.ArtifactId)
 }

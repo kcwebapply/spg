@@ -22,7 +22,7 @@ func GeneratePackage(c *cli.Context) {
 	generator.CreateDirectory(userInput.App.Name)
 	generator.GeneratePom(userInput)
 	generator.GenerateMain(userInput.App.Name)
-	generator.GeneratePropertiesFile(userInput.App.Name)
+	generator.GeneratePropertiesFile(userInput)
 
 	if &userInput.Db != nil {
 		generator.GenerateDB(userInput)

@@ -10,6 +10,7 @@ type App struct {
 }
 
 type Db struct {
-	Jdbc  string `toml:jdbc`
-	Table string `toml:table`
+	Jdbc   string `toml:jdbc`
+	Driver string `toml:driver`
+	Table  string `toml:table`
 }
