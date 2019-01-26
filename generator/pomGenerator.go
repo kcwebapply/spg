@@ -8,14 +8,14 @@ import (
 	parser "github.com/kcwebapply/spg/parser"
 )
 
-var JpaDependency = Dependency{GroupId: "org.springframework.boot", ArtifactId: "spring-boot-starter-data-jpa"}
+var jpaDependency = Dependency{GroupId: "org.springframework.boot", ArtifactId: "spring-boot-starter-data-jpa"}
 
 // GeneratePom =  touch pom
 func GeneratePom(userInput parser.UserInput) {
 	fileName := build.Default.GOPATH + "/src/github.com/kcwebapply/spg/java/pom.xml"
 	content := getFormatFileContent(fileName)
-	if &userInput.Db != nil {
-		content = setDependency(content, JpaDependency)
+	if userInput.Db.Driver != "" {
+		content = setDependency(content, jpaDependency)
 	}
 	writer := generateFile(userInput.App.Name + "/pom.xml")
 	defer writer.Flush()

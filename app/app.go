@@ -19,8 +19,8 @@ func AppInit() *cli.App {
 	app.Commands = []cli.Command{
 		{
 			Name:    "file",
-			Aliases: []string{"a"},
-			Usage:   "View saved memo.",
+			Aliases: []string{"f"},
+			Usage:   "create spring-boot package from .toml file.",
 			Action:  command.GeneratePackage,
 		},
 	}

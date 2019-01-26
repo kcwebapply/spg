@@ -43,7 +43,3 @@ func GenerateDB(userInput parser.UserInput) {
 	defer writer.Flush()
 	writer.Write(([]byte)(content))
 }
-
-func AddDBDependency(userInput parser.UserInput) {
-
-}

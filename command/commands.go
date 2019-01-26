@@ -11,11 +11,12 @@ import (
 
 func GeneratePackage(c *cli.Context) {
 	fileName := c.Args().First()
+	if &fileName == nil {
+		fmt.Println("please input .toml file name.")
+		os.Exit(0)
+	}
 	userInput := parser.Parse(fileName)
-
-	fmt.Println("obj ", userInput.App.Name, " ", userInput.Db.Jdbc)
-	fmt.Println("app", userInput.Db.Jdbc)
-	if &userInput.App == nil || &userInput.App.Name == nil {
+	if userInput.App.Name == "" {
 		fmt.Println("please define `name` property on tomlFile.")
 		os.Exit(0)
 	}
@@ -24,7 +25,7 @@ func GeneratePackage(c *cli.Context) {
 	generator.GenerateMain(userInput.App.Name)
 	generator.GeneratePropertiesFile(userInput)
 
-	if &userInput.Db != nil {
+	if userInput.Db.Driver != "" {
 		generator.GenerateDB(userInput)
 	}
 
