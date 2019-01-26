@@ -6,6 +6,10 @@
 
 **`SPG`** is simple terminal tool for generating **_SpringBoot package_**  and _**Classes**_ easily and quickly.
 
+- [Usage](#Usage)
+- [Generate Package](#Generate Package)
+- [toml Setting file](#toml Setting file)
+
 ## Usage
 
 ### Generate Package
