@@ -39,16 +39,20 @@ In this case, package components this.
 |--src
 |  |--main
 |  |  |--java
-|  |  |  |--SpringBootGenerator.java
+|  |  |  |--SpringBootGenerator.java    // generated automatically by default.
 |  |  |  |--model
-|  |  |  |  |--PurchaseEntity.java
-
-|  |  |  |  |--PurchaseRepository.java
+|  |  |  |  |--PurchaseEntity.java      // entity generated automatically by Db setting (refer to `table` key). 
+|  |  |  |  |--PurchaseRepository.java  // repository generrated automatically by Db setting (refer to `table` key).
 |  |  |--resources
-|  |  |  |--application.properties
+|  |  |  |--application.properties      // generated automatically by default.
 ```
 
+`application.properties` is also modified to adapt you setting.
 
+```
+spring.datasource.url=jdbc:postgresql://localhost:5432/test
+spring.datasource.driver-class-name=org.postgresql.Driver
+```
 
 ## Install
 
