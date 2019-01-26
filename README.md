@@ -8,16 +8,44 @@
 
 ## Usage
 
-
+#### Generate Package
+you can generate `SpringBoot` package with below command.
 ```terminal
-# generate package 
-
 $ spg file test.toml
-> Generating package spring-boot-generator !
+Generating package spring-boot-generator !
+```
 
-# you can generate spring-boot package.
-$ ls 
->  spring-boot-generator/ 
+
+
+#### toml Setting file
+you should touch `.toml` file to select what kinds of files you want to generate automatically.
+
+Here is the example of generating _DB-related_ file.
+```toml
+[App]
+  name="spring-boot-generator"
+
+[Db]
+  jdbc="jdbc:postgresql://localhost:5432/test"
+  driver="org.postgresql.Driver"
+  table="Purchase"
+```
+
+In this case, package components this.
+
+```
+/spring-boot-generator
+|--pom.xml
+|--src
+|  |--main
+|  |  |--java
+|  |  |  |--SpringBootGenerator.java
+|  |  |  |--model
+|  |  |  |  |--PurchaseEntity.java
+
+|  |  |  |  |--PurchaseRepository.java
+|  |  |--resources
+|  |  |  |--application.properties
 ```
 
 
