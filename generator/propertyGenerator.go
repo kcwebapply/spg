@@ -10,7 +10,7 @@ import (
 const datasourceDriverName = "spring.datasource.driver-class-name"
 const datasourceURL = "spring.datasource.url"
 
-// GeneratePropertiesFile =  touch application.properties
+// GeneratePropertiesFile touch application.properties
 func GeneratePropertiesFile(userInput parser.UserInput) {
 	writer := generateFile(userInput.App.Name + "/src/main/resources/application.properties")
 	if userInput.Db.Driver != "" {

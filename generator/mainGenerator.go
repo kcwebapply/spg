@@ -9,6 +9,7 @@ import (
 
 const path = "/src/main/java"
 
+// GenerateMain touch mainClass.
 func GenerateMain(appName string) {
 	fileName := build.Default.GOPATH + "/src/github.com/kcwebapply/spg/java/src/main/java/main.java"
 	content := getFormatFileContent(fileName)

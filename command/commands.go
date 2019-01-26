@@ -9,6 +9,7 @@ import (
 	parser "github.com/kcwebapply/spg/parser"
 )
 
+// GeneratePackage generate spring-boot package.
 func GeneratePackage(c *cli.Context) {
 	fileName := c.Args().First()
 	if &fileName == nil {

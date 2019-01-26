@@ -5,6 +5,7 @@ import (
 	"os"
 )
 
+// CreateDirectory initialize springBoot package.
 func CreateDirectory(appName string) {
 	err := os.MkdirAll(appName+path, 0777)
 	if err != nil {

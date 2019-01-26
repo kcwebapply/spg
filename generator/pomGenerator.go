@@ -10,7 +10,7 @@ import (
 
 var jpaDependency = Dependency{GroupId: "org.springframework.boot", ArtifactId: "spring-boot-starter-data-jpa"}
 
-// GeneratePom =  touch pom
+// GeneratePom touch pom.xml
 func GeneratePom(userInput parser.UserInput) {
 	fileName := build.Default.GOPATH + "/src/github.com/kcwebapply/spg/java/pom.xml"
 	content := getFormatFileContent(fileName)

@@ -9,6 +9,7 @@ import (
 
 var app *cli.App
 
+// AppInit initialize terminal setting.
 func AppInit() *cli.App {
 	config := config.GetConfig()
 
