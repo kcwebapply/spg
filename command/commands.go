@@ -21,13 +21,16 @@ func GeneratePackage(c *cli.Context) {
 		fmt.Println("please define `name` property on tomlFile.")
 		os.Exit(0)
 	}
-	generator.CreateDirectory(userInput.App.Name)
+	generator.CreateDirectory(userInput)
 	generator.GeneratePom(userInput)
-	generator.GenerateMain(userInput.App.Name)
+	generator.GenerateMain(userInput)
+	generator.GenerateTest(userInput)
 	generator.GeneratePropertiesFile(userInput)
 
 	if userInput.Db.Driver != "" {
 		generator.GenerateDB(userInput)
 	}
+
+	fmt.Printf("\x1b[1;32mGenerating package %s completed!\x1b[0m\n", userInput.App.Name)
 
 }

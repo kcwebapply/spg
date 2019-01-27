@@ -1,5 +1,7 @@
 [App]
   name="spring-boot-generator"
+  groupId="com.kcwebapply"
+  artifactId="spring-sample"
 
 [Db]
   jdbc="jdbc:postgresql://localhost:5432/test"

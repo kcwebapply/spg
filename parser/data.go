@@ -8,7 +8,9 @@ type UserInput struct {
 
 // App is struct of user's application setting.
 type App struct {
-	Name string `toml:name`
+	Name       string `toml:name`
+	GroupId    string `toml:groupId`
+	ArtifactId string `toml:artifactId`
 }
 
 //Db is struct of user's application setting.

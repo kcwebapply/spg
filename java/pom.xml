@@ -8,9 +8,7 @@
 		<version>2.1.1.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
-	<artifactId>sample</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	${projectinfo}
 	<packaging>jar</packaging>
 	<name>sample</name>
 	<description>Demo project for Spring Boot</description>

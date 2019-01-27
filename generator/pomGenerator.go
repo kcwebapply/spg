@@ -9,19 +9,44 @@ import (
 )
 
 var jpaDependency = Dependency{GroupId: "org.springframework.boot", ArtifactId: "spring-boot-starter-data-jpa"}
+var mySQLDependency = Dependency{GroupId: "mysql", ArtifactId: "mysql-connector-java"}
+var postgresDependency = Dependency{GroupId: "org.postgresql", ArtifactId: "postgresql"}
+
+const mysqlDriver = "com.mysql.jdbc.Driver"
+const postgreDriver = "org.postgresql.Driver"
 
 // GeneratePom touch pom.xml
 func GeneratePom(userInput parser.UserInput) {
+
 	fileName := build.Default.GOPATH + "/src/github.com/kcwebapply/spg/java/pom.xml"
 	content := getFormatFileContent(fileName)
+	content = setProjectInfo(content, userInput)
+
 	if userInput.Db.Driver != "" {
+		driver := userInput.Db.Driver
 		content = setDependency(content, jpaDependency)
+		//org.mysql.Driver com.mysql.jdbc.Driver
+		switch driver {
+		case mysqlDriver:
+			content = setDependency(content, mySQLDependency)
+		case postgreDriver:
+			content = setDependency(content, postgresDependency)
+		}
 	}
 	writer := generateFile(userInput.App.Name + "/pom.xml")
 	defer writer.Flush()
 	writer.Write(([]byte)(content))
 }
 
+//set Project info
+func setProjectInfo(content string, usetInput parser.UserInput) string {
+	groupId := usetInput.App.GroupId
+	artifactId := usetInput.App.ArtifactId
+	projectInfoString := fmt.Sprintf("<groupId>%s</groupId>\n    <artifactId>%s</artifactId>\n", groupId, artifactId)
+	return strings.Replace(content, "${projectinfo}", projectInfoString, -1)
+}
+
+// add dependency
 func setDependency(content string, dependency Dependency) string {
 	dependencyString := dependency.toString()
 	return strings.Replace(content, "</dependencies>", dependencyString+"\n  </dependencies>", -1)
