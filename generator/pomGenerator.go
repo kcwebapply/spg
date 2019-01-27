@@ -40,10 +40,12 @@ func GeneratePom(userInput parser.UserInput) {
 
 //set Project info
 func setProjectInfo(content string, usetInput parser.UserInput) string {
-	groupId := usetInput.App.GroupId
-	artifactId := usetInput.App.ArtifactId
-	projectInfoString := fmt.Sprintf("<groupId>%s</groupId>\n    <artifactId>%s</artifactId>\n", groupId, artifactId)
-	return strings.Replace(content, "${projectinfo}", projectInfoString, -1)
+	appName := usetInput.App.Name
+	groupID := usetInput.App.GroupId
+	artifactID := usetInput.App.ArtifactId
+	contentText := strings.Replace(content, "${name}", appName, -1)
+	contentText = strings.Replace(content, "${artifactId}", artifactID, -1)
+	return strings.Replace(contentText, "${groupId}", groupID, -1)
 }
 
 // add dependency

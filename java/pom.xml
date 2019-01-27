@@ -8,9 +8,10 @@
 		<version>2.1.1.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	${projectinfo}
+	<groupId>${groupId}</groupId>
+	<artifactId>${artifactId}</artifactId>
 	<packaging>jar</packaging>
-	<name>sample</name>
+	<name>${name}</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
