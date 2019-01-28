@@ -22,7 +22,6 @@ Generating package spring-boot-generator !
 ```
 
 
-
 <h2 id='toml'>toml Setting file</h2>
 you should touch `.toml` file to select what kinds of files(`Java Class`) you want to generate automatically.
 
@@ -30,14 +29,14 @@ Here is the example of generating _DB-related_ file.
 
 ```toml
 [App]
-  name="spring-boot-generator"
-  groupId="com.kcwebapply"
-  artifactId="spring-sample"
+  name="spring-boot-generator" // project_name
+  groupId="com.kcwebapply"     // groupId
+  artifactId="spring-sample"   // artifactId
 
 [Db]
-  jdbc="jdbc:postgresql://localhost:5432/test"
-  driver="org.postgresql.Driver"
-  table="Purchase"
+  jdbc="jdbc:postgresql://localhost:5432/test" //db connection info
+  driver="org.postgresql.Driver"               // db driver
+  table="Purchase"                             // table name you use
 ```
 
 Then, after we run `spg` command, we generate package anc classes .
@@ -88,7 +87,8 @@ public interface PurchaseRepository extends JpaRepository<PurchaseEntity,String>
 }
 ```
 
-This command generate these _boilerplate class_  about some foundational function on _`SpringBoot`_
+This command generate these _boilerplate class_  about foundational function on _`SpringBoot`_ .
+
 #### application.properties
 Depending on what you write on `.toml` file, some property is also written on `application.properties` automatically.
 `application.properties` is also modified to adapt you setting.
@@ -107,10 +107,12 @@ You add database setting on your `.toml` file, so then some dependency is added 
      <artifactId>spring-boot-starter-data-jpa</artifactId>
 </dependency>
 ```
+
 Like this, when you write some library setting on `.toml` file,
 dependency package is also added automatically.
 
-
+<h2 id='supported'>supported function</h2>
+- SpringDataJpa (Mysql, postgres)
 
 ## Install
 
