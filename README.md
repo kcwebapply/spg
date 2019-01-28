@@ -8,9 +8,11 @@
 
 - [Usage](#Usage)
 - [Generate Package](#Generate)
-- [toml Setting file](#toml Setting file)
+- [toml Setting file](#toml)
+- [generated oackage constitution](#const)
 
 ## Usage
+
 
 <h2 id='Generate'>Generate Package</h2>
 you can generate `SpringBoot` package with below command.
@@ -21,7 +23,7 @@ Generating package spring-boot-generator !
 
 
 
-### toml Setting file
+<h2 id='toml'>toml Setting file</h2>
 you should touch `.toml` file to select what kinds of files(`Java Class`) you want to generate automatically.
 
 Here is the example of generating _DB-related_ file.
@@ -40,7 +42,7 @@ Here is the example of generating _DB-related_ file.
 
 Then, after we run `spg` command, we generate package anc classes .
 
-### Generated package constitution
+<h2 id='const'>Generated package constitution</h2>
 In this case, package constitution is like this.
 
 ```
