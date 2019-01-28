@@ -1,0 +1,7 @@
+[App]
+  name="spring-boot-generator"
+
+[Db]
+  jdbc="jdbc:postgresql://localhost:5432/test"
+  driver="org.postgresql.Driver"
+  table="Purchase"

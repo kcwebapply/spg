@@ -17,12 +17,20 @@ func AppInit() *cli.App {
 	app.Name = config.App.Name
 	app.Usage = "github.com/cli/spg"
 	app.Version = config.App.Version
+
 	app.Commands = []cli.Command{
 		{
 			Name:    "file",
 			Aliases: []string{"f"},
 			Usage:   "create spring-boot package from .toml file.",
 			Action:  command.GeneratePackage,
+		},
+
+		{
+			Name:    "init",
+			Aliases: []string{"i"},
+			Usage:   "generate default .toml file.",
+			Action:  command.InitTomlFile,
 		},
 	}
 	return app

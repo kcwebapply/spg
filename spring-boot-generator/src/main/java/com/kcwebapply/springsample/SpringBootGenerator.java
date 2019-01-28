@@ -1,0 +1,17 @@
+package com.kcwebapply.springsample;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+/**
+ * Hello world!
+ *
+ */
+@SpringBootApplication
+public class SpringBootGenerator
+{
+    public static void main( String[] args )
+    {
+        SpringApplication.run(SpringBootGenerator.class, args);
+    }
+}

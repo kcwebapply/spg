@@ -1,7 +1,9 @@
 package command
 
 import (
+	"bufio"
 	"fmt"
+	"io/ioutil"
 	"os"
 
 	"github.com/codegangsta/cli"
@@ -30,4 +32,26 @@ func GeneratePackage(c *cli.Context) {
 		generator.GenerateDB(userInput)
 	}
 
+}
+
+// InitTomlFile generate toml file.
+func InitTomlFile(c *cli.Context) {
+	// generate file.
+	fileName := "spg.toml"
+	writeFile, err := os.OpenFile(fileName, os.O_TRUNC|os.O_WRONLY|os.O_CREATE, 0777)
+	if err != nil {
+		fmt.Println(err)
+	}
+	writer := bufio.NewWriter(writeFile)
+
+	// open format file.
+	f, err := os.Open(fileName)
+	if err != nil {
+		fmt.Println("err,", err)
+	}
+	b, err := ioutil.ReadAll(f)
+	if err != nil {
+		fmt.Println("err,", err)
+	}
+	writer.Write(b)
 }
