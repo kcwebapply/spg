@@ -15,7 +15,7 @@
 
 
 <h2 id='Generate'>Generate Package</h2>
-you can generate `SpringBoot` package with below command.
+you can generate `SpringBoot` package with below command very quickly.
 ```terminal
 $ spg file test.toml
 Generating package spring-boot-generator !
