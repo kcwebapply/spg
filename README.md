@@ -7,12 +7,12 @@
 **`SPG`** is simple terminal tool for generating **_SpringBoot package_**  and _**Classes**_ easily and quickly.
 
 - [Usage](#Usage)
-- [Generate Package](#Generate Package)
+- [Generate Package](#Generate)
 - [toml Setting file](#toml Setting file)
 
 ## Usage
 
-### Generate Package
+<h2 id='Generate'>Generate Package</h2>
 you can generate `SpringBoot` package with below command.
 ```terminal
 $ spg file test.toml
