@@ -29,14 +29,14 @@ Here is the example of generating _DB-related_ file.
 
 ```toml
 [App]
-  name="spring-boot-generator" // project_name
-  groupId="com.kcwebapply"     // groupId
-  artifactId="spring-sample"   // artifactId
+  name="spring-boot-generator" 
+  groupId="com.kcwebapply"    
+  artifactId="spring-sample"  
 
 [Db]
-  jdbc="jdbc:postgresql://localhost:5432/test" //db connection info
-  driver="org.postgresql.Driver"               // db driver
-  table="Purchase"                             // table name you use
+  jdbc="jdbc:postgresql://localhost:5432/test" 
+  driver="org.postgresql.Driver"               
+  table="Purchase"                            
 ```
 
 Then, after we run `spg` command, we generate package anc classes .
