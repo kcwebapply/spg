@@ -87,7 +87,7 @@ public interface PurchaseRepository extends JpaRepository<PurchaseEntity,String>
 ```
 
 This command generate these _boilerplate class_  about some foundational function on _`SpringBoot`_
-##### application.properties
+#### application.properties
 Depending on what you write on `.toml` file, some property is also written on `application.properties` automatically.
 `application.properties` is also modified to adapt you setting.
 
@@ -96,7 +96,7 @@ spring.datasource.url=jdbc:postgresql://localhost:5432/test
 spring.datasource.driver-class-name=org.postgresql.Driver
 ```
 
-##### pom.xml
+#### pom.xml
 You add database setting on your `.toml` file, so then some dependency is added to `pom.xml` automatically.
 
 ```xml
