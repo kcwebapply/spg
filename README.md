@@ -15,7 +15,9 @@
 
 
 <h2 id='Generate'>Generate Package</h2>
+
 you can generate `SpringBoot` package with below command very quickly.
+
 ```terminal
 $ spg file test.toml
 Generating package spring-boot-generator !
@@ -23,7 +25,7 @@ Generating package spring-boot-generator !
 
 
 <h2 id='toml'>toml Setting file</h2>
-you should touch `.toml` file to select what kinds of files(`Java Class`) you want to generate automatically.
+you should touch `.toml` file to select what kinds of  _Java-Class_ files you want to generate automatically.
 
 Here is the example of generating _DB-related_ file.
 
