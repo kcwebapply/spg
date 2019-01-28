@@ -44,7 +44,7 @@ func setProjectInfo(content string, usetInput parser.UserInput) string {
 	groupID := usetInput.App.GroupId
 	artifactID := usetInput.App.ArtifactId
 	contentText := strings.Replace(content, "${name}", appName, -1)
-	contentText = strings.Replace(content, "${artifactId}", artifactID, -1)
+	contentText = strings.Replace(contentText, "${artifactId}", artifactID, -1)
 	return strings.Replace(contentText, "${groupId}", groupID, -1)
 }
 

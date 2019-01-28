@@ -3,8 +3,10 @@ package command
 import (
 	"bufio"
 	"fmt"
+	"go/build"
 	"io/ioutil"
 	"os"
+	"strings"
 
 	"github.com/codegangsta/cli"
 	generator "github.com/kcwebapply/spg/generator"
@@ -39,6 +41,10 @@ func GeneratePackage(c *cli.Context) {
 
 // InitTomlFile generate toml file.
 func InitTomlFile(c *cli.Context) {
+
+	name := "\"" + c.String("n") + "\""
+	artifactId := "\"" + c.String("a") + "\""
+	groupId := "\"" + c.String("g") + "\""
 	// generate file.
 	fileName := "spg.toml"
 	writeFile, err := os.OpenFile(fileName, os.O_TRUNC|os.O_WRONLY|os.O_CREATE, 0777)
@@ -46,15 +52,24 @@ func InitTomlFile(c *cli.Context) {
 		fmt.Println(err)
 	}
 	writer := bufio.NewWriter(writeFile)
+	defer writer.Flush()
 
 	// open format file.
-	f, err := os.Open(fileName)
+	f, err := os.Open(build.Default.GOPATH + "/src/github.com/kcwebapply/spg/default.toml")
 	if err != nil {
 		fmt.Println("err,", err)
+		os.Exit(0)
 	}
 	b, err := ioutil.ReadAll(f)
 	if err != nil {
 		fmt.Println("err,", err)
+		os.Exit(0)
 	}
-	writer.Write(b)
+	content := string(b)
+	content = strings.Replace(content, "${name}", name, -1)
+	content = strings.Replace(content, "${artifactId}", artifactId, -1)
+	content = strings.Replace(content, "${groupId}", groupId, -1)
+	writer.WriteString(content)
+
+	fmt.Printf("\x1b[1;32mGenerating spg.toml file completed!\x1b[0m\n")
 }

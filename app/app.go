@@ -18,6 +18,25 @@ func AppInit() *cli.App {
 	app.Usage = "github.com/cli/spg"
 	app.Version = config.App.Version
 
+	initFlag := []cli.Flag{
+		cli.StringFlag{
+			Name:  "n,name",
+			Value: "name",
+			Usage: "name",
+		},
+		cli.StringFlag{
+			Name:  "a,artifactId",
+			Value: "artifactId",
+			Usage: "artifactId",
+		},
+
+		cli.StringFlag{
+			Name:  "g,groupId",
+			Value: "groupId",
+			Usage: "groupId",
+		},
+	}
+
 	app.Commands = []cli.Command{
 		{
 			Name:    "file",
@@ -31,6 +50,7 @@ func AppInit() *cli.App {
 			Aliases: []string{"i"},
 			Usage:   "generate default .toml file.",
 			Action:  command.InitTomlFile,
+			Flags:   initFlag,
 		},
 	}
 	return app
