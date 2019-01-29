@@ -2,3 +2,5 @@
   name=${name}
   groupId=${groupId}
   artifactId=${artifactId}
+  springVersion=${springVersion}
+  javaVersion=${javaVersion}

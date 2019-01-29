@@ -35,6 +35,16 @@ func AppInit() *cli.App {
 			Value: "groupId",
 			Usage: "groupId",
 		},
+		cli.StringFlag{
+			Name:  "s,spring",
+			Value: "2.1.2.RELEASE",
+			Usage: "springVersion",
+		},
+		cli.StringFlag{
+			Name:  "j,java",
+			Value: "1.8",
+			Usage: "javaVersion",
+		},
 	}
 
 	app.Commands = []cli.Command{
