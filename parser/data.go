@@ -2,8 +2,9 @@ package parser
 
 // UserInput is user's project setting.
 type UserInput struct {
-	App App `toml:App`
-	Db  Db  `toml:Db`
+	App  App  `toml:App`
+	Db   Db   `toml:Db`
+	Task Task `toml:Task`
 }
 
 // App is struct of user's application setting.
@@ -22,5 +23,7 @@ type Db struct {
 	Table  string `toml:table`
 }
 
-type Batch struct {
+type Task struct {
+	Schedule string `toml:schedule`
+	Zone     string `toml:zone`
 }

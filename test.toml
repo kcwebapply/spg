@@ -9,3 +9,7 @@
   jdbc="jdbc:postgresql://localhost:5432/test"
   driver="org.postgresql.Driver"
   table="Purchase"
+
+[task]
+  schedule = "0 * * * * *"
+  zone="Asia/Tokyo"

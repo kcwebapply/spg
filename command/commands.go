@@ -35,6 +35,10 @@ func GeneratePackage(c *cli.Context) {
 		generator.GenerateDB(userInput)
 	}
 
+	if userInput.Task.Schedule != "" {
+		generator.GenerateTask(userInput)
+	}
+
 	fmt.Printf("\x1b[1;32mGenerating package %s completed!\x1b[0m\n", userInput.App.Name)
 
 }
