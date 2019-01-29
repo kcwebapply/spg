@@ -9,11 +9,16 @@
 **`SPG`** is simple terminal tool for generating **_SpringBoot package_**  and _**Classes**_ easily and quickly.
 
 - [Usage](#Usage)
-- [Generate Package](#Generate)
-- [toml Setting file](#toml)
-- [generated oackage constitution](#const)
+  - [Generate Package](#Generate)
+  - [toml Setting file](#toml)
+  - [Generated oackage constitution](#const)
+  - [Generate toml file](#toml)
 
-## Usage
+- [Supported function](#supported)
+- [Installation](#install)
+  - [mac Os App](#mac)
+
+<h1 id="Usage">Usage</h1>
 
 
 <h2 id='Generate'>Generate Package</h2>
@@ -115,17 +120,35 @@ You add database setting on your `.toml` file, so then some dependency is added 
 Like this, when you write some library setting on `.toml` file,
 dependency package is also added automatically.
 
-<h2 id='supported'>supported function</h2>
+<h2 id='toml'>Generating toml file</h2>
+you can generate `.toml` file with `spg init` command.
+```terminal
+$ spg init -artifactId spring-boot-generator -g com.test -n spring-boot-generator
+Generating spg.toml file completed!
+```
+generate file like this.
+```
+// spg.toml
+[App]
+  name="spring-boot-generator"
+  groupId="com.test"
+  artifactId="spring-boot-generator"
+```
+
+
+<h1 id='supported'>supported function</h2>
 - SpringDataJpa (Mysql, postgres)
 
-## Install
+<h1 id='install'>Install</h1>
 
-### On macOS
+<h2 id='mac'>On macOS</h2>
 
 ```
 brew tap kcwebapply/spg
 brew install spg
 ```
+
+
 
 
 
