@@ -7,16 +7,16 @@
 [![Release](https://img.shields.io/github/release/kcwebapply/spg.svg?style=flat-square)](https://github.com/kcwebapply/spg/release)
 
 **`SPG`** is simple terminal tool for generating **_SpringBoot package_**  and _**Classes**_ easily and quickly.
-
 - [Usage](#Usage)
   - [Generate Package](#Generate)
   - [toml Setting file](#toml)
   - [Generated oackage constitution](#const)
   - [Generate toml file](#toml)
-
+- [Demo](#Demo)
 - [Supported function](#supported)
 - [Installation](#install)
   - [mac Os App](#mac)
+
 
 <h1 id="Usage">Usage</h1>
 
@@ -136,7 +136,28 @@ generate file like this.
   groupId="com.test"
   artifactId="spring-boot-generator"
 ```
+<h1 id="Demo">Demo</h1>
 
+```terminal
+$ spg init -a test -g com.test -name test
+> Generating spg.toml file completed!
+$ spg file spg.toml
+> Generating package test completed!
+$ cd test
+$ mvn test
+.....
+INFO]
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 10.931 s
+[INFO] Finished at: 2019-01-29T21:16:14+09:00
+[INFO] ------------------------------------------------------------------------
+```
 
 <h1 id='supported'>supported function</h2>
 - SpringDataJpa (Mysql, postgres)
