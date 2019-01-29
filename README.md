@@ -121,13 +121,15 @@ Like this, when you write some library setting on `.toml` file,
 dependency package is also added automatically.
 
 <h2 id='toml'>Generating toml file</h2>
+
 you can generate `.toml` file with `spg init` command.
+
 ```terminal
 $ spg init -artifactId spring-boot-generator -g com.test -n spring-boot-generator
 Generating spg.toml file completed!
 ```
 generate file like this.
-```
+```toml
 // spg.toml
 [App]
   name="spring-boot-generator"
