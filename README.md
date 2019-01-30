@@ -135,6 +135,8 @@ generate file like this.
   name="spring-boot-generator"
   groupId="com.test"
   artifactId="spring-boot-generator"
+  springVersion="2.1.1.RELEASE"
+  javaVersion="1.8"
 ```
 <h1 id="Demo">Demo</h1>
 
@@ -160,7 +162,26 @@ INFO]
 ```
 
 <h1 id='supported'>supported function</h2>
-- SpringDataJpa (Mysql, postgres)
+
+Here is the list of supported function and `.toml` setting.
+[SpringData Jpa](#db)
+[SpringScheduker](#db)
+
+<h3 id='db'>SpringDataJpa (Mysql, postgres)</h3>
+```toml
+[Db]
+  jdbc="jdbc:postgresql://localhost:5432/test" 
+  driver="org.postgresql.Driver"               
+  table="Purchase"         
+
+```
+
+<h3 id='task'>SpringScheduler</h3>
+```toml
+[task]
+  schedule = "0 * * * * *"
+  zone="Asia/Tokyo"
+```
 
 <h1 id='install'>Install</h1>
 
