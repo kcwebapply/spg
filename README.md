@@ -164,10 +164,11 @@ INFO]
 <h1 id='supported'>supported function</h2>
 
 Here is the list of supported function and `.toml` setting.
-[SpringData Jpa](#db)
-[SpringScheduker](#db)
+- [SpringData Jpa](#db)
+- [SpringScheduker](#db)
 
 <h3 id='db'>SpringDataJpa (Mysql, postgres)</h3>
+
 ```toml
 [Db]
   jdbc="jdbc:postgresql://localhost:5432/test" 
@@ -177,6 +178,7 @@ Here is the list of supported function and `.toml` setting.
 ```
 
 <h3 id='task'>SpringScheduler</h3>
+
 ```toml
 [task]
   schedule = "0 * * * * *"
