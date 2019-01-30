@@ -20,19 +20,11 @@ func GeneratePom(userInput parser.UserInput) {
 
 	fileName := build.Default.GOPATH + "/src/github.com/kcwebapply/spg/java/pom.xml"
 	content := getFormatFileContent(fileName)
+	// set Project info on pom.xml
 	content = setProjectInfo(content, userInput)
+	// add Dependencies  on pom.xml
+	content = setDependencies(content, userInput)
 
-	// dbSetting
-	if userInput.Db.Driver != "" {
-		driver := userInput.Db.Driver
-		content = setDependency(content, jpaDependency)
-		switch driver {
-		case mysqlDriver:
-			content = setDependency(content, mySQLDependency)
-		case postgreDriver:
-			content = setDependency(content, postgresDependency)
-		}
-	}
 	writer := generateFile(userInput.App.Name + "/pom.xml")
 	defer writer.Flush()
 	writer.Write(([]byte)(content))
@@ -54,10 +46,26 @@ func setProjectInfo(content string, usetInput parser.UserInput) string {
 	return contentText
 }
 
+func setDependencies(content string, userInput parser.UserInput) string {
+	// dbSetting
+	if userInput.Db.Driver != "" {
+		driver := userInput.Db.Driver
+		content = setDependency(content, jpaDependency)
+		switch driver {
+		case mysqlDriver:
+			content = setDependency(content, mySQLDependency)
+		case postgreDriver:
+			content = setDependency(content, postgresDependency)
+		}
+	}
+	content = strings.Replace(content, "${dependencies}", "", -1)
+	return content
+}
+
 // add dependency
 func setDependency(content string, dependency Dependency) string {
 	dependencyString := dependency.toString()
-	return strings.Replace(content, "</dependencies>", dependencyString+"\n  </dependencies>", -1)
+	return strings.Replace(content, "${dependencies}", dependencyString+"\n\n  ${dependencies}", -1)
 }
 
 type Dependency struct {
