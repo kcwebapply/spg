@@ -21,19 +21,29 @@ func AppInit() *cli.App {
 	initFlag := []cli.Flag{
 		cli.StringFlag{
 			Name:  "n,name",
-			Value: "name",
+			Value: "spring-sample",
 			Usage: "name",
 		},
 		cli.StringFlag{
 			Name:  "a,artifactId",
-			Value: "artifactId",
+			Value: "spring-sample",
 			Usage: "artifactId",
 		},
 
 		cli.StringFlag{
 			Name:  "g,groupId",
-			Value: "groupId",
+			Value: "com.sample",
 			Usage: "groupId",
+		},
+		cli.StringFlag{
+			Name:  "s,spring",
+			Value: "2.1.2.RELEASE",
+			Usage: "springVersion",
+		},
+		cli.StringFlag{
+			Name:  "j,java",
+			Value: "1.8",
+			Usage: "javaVersion",
 		},
 	}
 

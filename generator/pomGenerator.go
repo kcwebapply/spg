@@ -22,10 +22,10 @@ func GeneratePom(userInput parser.UserInput) {
 	content := getFormatFileContent(fileName)
 	content = setProjectInfo(content, userInput)
 
+	// dbSetting
 	if userInput.Db.Driver != "" {
 		driver := userInput.Db.Driver
 		content = setDependency(content, jpaDependency)
-		//org.mysql.Driver com.mysql.jdbc.Driver
 		switch driver {
 		case mysqlDriver:
 			content = setDependency(content, mySQLDependency)
@@ -43,9 +43,15 @@ func setProjectInfo(content string, usetInput parser.UserInput) string {
 	appName := usetInput.App.Name
 	groupID := usetInput.App.GroupId
 	artifactID := usetInput.App.ArtifactId
+	springVersion := usetInput.App.SpringVersion
+	javaVersion := usetInput.App.JavaVersion
+
 	contentText := strings.Replace(content, "${name}", appName, -1)
 	contentText = strings.Replace(contentText, "${artifactId}", artifactID, -1)
-	return strings.Replace(contentText, "${groupId}", groupID, -1)
+	contentText = strings.Replace(contentText, "${groupId}", groupID, -1)
+	contentText = strings.Replace(contentText, "${springVersion}", springVersion, -1)
+	contentText = strings.Replace(contentText, "${javaVersion}", javaVersion, -1)
+	return contentText
 }
 
 // add dependency

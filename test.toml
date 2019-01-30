@@ -2,8 +2,14 @@
   name="spring-boot-generator"
   groupId="com.kcwebapply"
   artifactId="spring-sample"
+  springVersion="2.1.1.RELEASE"
+  javaVersion="1.8"
 
 [Db]
   jdbc="jdbc:postgresql://localhost:5432/test"
   driver="org.postgresql.Driver"
   table="Purchase"
+
+[task]
+  schedule = "0 * * * * *"
+  zone="Asia/Tokyo"
