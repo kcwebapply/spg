@@ -45,17 +45,17 @@ func GeneratePackage(c *cli.Context) {
 
 // InitTomlFile generate toml file.
 func InitTomlFile(c *cli.Context) {
-	name := "sample"
+	name := "spring-sample"
 	groupId := "com.sample"
-	artifactId := "sample"
+	artifactId := "spring-sample"
 	springVersion := "2.1.2.RELEASE"
 	javaVersion := "1.8"
 
-	if c.String("n") != "" {
+	if c.String("n") != "name" {
 		name = "\"" + c.String("n") + "\""
 	}
 
-	if c.String("a") != "" {
+	if c.String("a") != "artifactId" {
 		artifactId = "\"" + c.String("a") + "\""
 	}
 
