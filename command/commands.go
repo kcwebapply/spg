@@ -3,14 +3,13 @@ package command
 import (
 	"bufio"
 	"fmt"
-	"go/build"
-	"io/ioutil"
 	"os"
 	"strings"
 
 	"github.com/codegangsta/cli"
 	generator "github.com/kcwebapply/spg/generator"
 	parser "github.com/kcwebapply/spg/parser"
+	"github.com/kcwebapply/spg/template"
 )
 
 // GeneratePackage generate spring-boot package.
@@ -80,18 +79,7 @@ func InitTomlFile(c *cli.Context) {
 	writer := bufio.NewWriter(writeFile)
 	defer writer.Flush()
 
-	// open format file.
-	f, err := os.Open(build.Default.GOPATH + "/src/github.com/kcwebapply/spg/default.toml")
-	if err != nil {
-		fmt.Println("err,", err)
-		os.Exit(0)
-	}
-	b, err := ioutil.ReadAll(f)
-	if err != nil {
-		fmt.Println("err,", err)
-		os.Exit(0)
-	}
-	content := string(b)
+	content := string(template.DEFAULT)
 	content = strings.Replace(content, "${name}", name, -1)
 	content = strings.Replace(content, "${artifactId}", artifactId, -1)
 	content = strings.Replace(content, "${groupId}", groupId, -1)

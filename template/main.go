@@ -1,4 +1,6 @@
-package ${package};
+package template
+
+var MAIN = `package ${package};
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,3 +19,4 @@ public class ${name}
         SpringApplication.run(${name}.class, args);
     }
 }
+`

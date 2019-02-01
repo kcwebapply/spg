@@ -63,5 +63,6 @@ func AppInit() *cli.App {
 			Flags:   initFlag,
 		},
 	}
+
 	return app
 }

@@ -1,4 +1,6 @@
-package ${package};
+package template
+
+var TEST = `package ${package};
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,4 +13,4 @@ public class ${name}Tests {
 	@Test
 	public void contextLoads() {
 	}
-}
+}`

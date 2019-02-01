@@ -1,4 +1,6 @@
-package model;
+package template
+
+var JPA = `package model;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -8,3 +10,4 @@ import org.springframework.stereotype.Repository;
 public interface ${name} extends JpaRepository<${entityFileName},String> {
 
 }
+`

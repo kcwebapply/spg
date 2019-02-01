@@ -1,18 +1,18 @@
 package generator
 
 import (
-	"go/build"
 	"strings"
 
 	"github.com/iancoleman/strcase"
 	parser "github.com/kcwebapply/spg/parser"
+	template "github.com/kcwebapply/spg/template"
 )
 
 // GenerateMain touch mainClass.
 func GenerateMain(userInput parser.UserInput) {
 	appName := userInput.App.Name
-	fileName := build.Default.GOPATH + "/src/github.com/kcwebapply/spg/java/src/main/java/main.java"
-	content := getFormatFileContent(fileName)
+
+	content := template.MAIN
 	imports, annotations := getImports(userInput)
 
 	content = strings.Replace(content, "${name}", strcase.ToCamel(appName), -1)

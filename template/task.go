@@ -1,4 +1,6 @@
-package batch;
+package template
+
+var TASK = `package batch;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -13,3 +15,4 @@ public class Task{
     }
 
 }
+`
