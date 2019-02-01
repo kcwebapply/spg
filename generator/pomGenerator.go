@@ -2,10 +2,10 @@ package generator
 
 import (
 	"fmt"
-	"go/build"
 	"strings"
 
 	parser "github.com/kcwebapply/spg/parser"
+	template "github.com/kcwebapply/spg/template"
 )
 
 var jpaDependency = Dependency{GroupId: "org.springframework.boot", ArtifactId: "spring-boot-starter-data-jpa"}
@@ -18,8 +18,8 @@ const postgreDriver = "org.postgresql.Driver"
 // GeneratePom touch pom.xml
 func GeneratePom(userInput parser.UserInput) {
 
-	fileName := build.Default.GOPATH + "/src/github.com/kcwebapply/spg/java/pom.xml"
-	content := getFormatFileContent(fileName)
+	//fileName := build.Default.GOPATH + "/src/github.com/kcwebapply/spg/java/pom.xml"
+	content := template.POM //getFormatFileContent(fileName)
 	// set Project info on pom.xml
 	content = setProjectInfo(content, userInput)
 	// add Dependencies  on pom.xml

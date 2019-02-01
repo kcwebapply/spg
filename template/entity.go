@@ -1,4 +1,6 @@
-package model;
+package template
+
+var ENTITY = `package model;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -9,3 +11,4 @@ import javax.persistence.Table;
 public class ${name} {
 
 }
+`
