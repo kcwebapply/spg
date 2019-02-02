@@ -1,6 +1,6 @@
 package template
 
-var JPA = `package model;
+var JPA = `package ${package}.model;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

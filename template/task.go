@@ -1,6 +1,6 @@
 package template
 
-var TASK = `package batch;
+var TASK = `package ${package}.task;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.scheduling.annotation.Scheduled;
