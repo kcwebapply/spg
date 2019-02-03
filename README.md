@@ -20,10 +20,18 @@
 
 
 <h1 id="Spg">Why Spg?</h1>
-If you want to generate _SpringBootPackage_ , you can take 2 ways
+If you want to generate _SpringBootPackage_  , you can take 2 ways
 
-1. `mvn -B archetype:generate` command.
-2. using [spring-initializr](https://start.spring.io/)
+- `mvn -B archetype:generate` command.
+- using [spring-initializr](https://start.spring.io/)
+
+But, `mvn` commands needs lots of typing and _generated package_ is only **_JavaPackage_**, it is not **_SpringBootPackage_** .
+
+`Spring-initializr` is a good way of generating **_SpringBootPackage_**. 
+But `Spring-initializr` can be only used on online.
+Also,what `Spring-initializr` do about `dependency` is only adding `dependency` tag on `pom.xml` in many case.
+So, If you add `dependency` on WebSite and download it, its package may imcomplete one .
+
 
 <h2> </h2>
 
