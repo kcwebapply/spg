@@ -7,6 +7,7 @@
 [![Release](https://img.shields.io/github/release/kcwebapply/spg.svg?style=flat-square)](https://github.com/kcwebapply/spg/release)
 
 **`SPG`** is simple terminal tool for generating **_SpringBoot package_**  and _**Classes**_ easily and quickly.
+- [Why Spg?](#Spg)
 - [Usage](#Usage)
   - [Generate Package](#Generate)
   - [toml Setting file](#toml)
@@ -16,6 +17,15 @@
 - [Supported function](#supported)
 - [Installation](#install)
   - [mac Os App](#mac)
+
+
+<h1 id="Spg">Why Spg?</h1>
+If you want to generate _SpringBootPackage_ , you can take 2 ways
+
+1. `mvn -B archetype:generate` command.
+2. using [spring-initializr](https://start.spring.io/)
+
+<h2> </h2>
 
 
 <h1 id="Usage">Usage</h1>
@@ -38,12 +48,12 @@ Here is the example of generating _DB-related_ file.
 
 ```toml
 [App]
-  name="spring-boot-generator" 
+  name="spring-boot-generator"
   groupId="com.kcwebapply"    
   artifactId="spring-sample"  
 
 [Db]
-  jdbc="jdbc:postgresql://localhost:5432/test" 
+  jdbc="jdbc:postgresql://localhost:5432/test"
   driver="org.postgresql.Driver"               
   table="Purchase"                            
 ```
@@ -63,7 +73,7 @@ In this case, package constitution is like this.
 |  |  |  |  |  |--springsample
 |  |  |  |  |  |  |--SpringBootGenerator.java    // generated automatically by default.
 |  |  |  |--model
-|  |  |  |  |--PurchaseEntity.java               // entity generated  by Db setting (refer to Db.Table key on toml file). 
+|  |  |  |  |--PurchaseEntity.java               // entity generated  by Db setting (refer to Db.Table key on toml file).
 |  |  |  |  |--PurchaseRepository.java           // repository generated  by Db setting (refer to Db.Table key on toml file).
 |  |  |--resources
 |  |  |  |--application.properties               // generated automatically by default.
@@ -171,7 +181,7 @@ Here is the list of supported function and `.toml` setting.
 
 ```toml
 [Db]
-  jdbc="jdbc:postgresql://localhost:5432/test" 
+  jdbc="jdbc:postgresql://localhost:5432/test"
   driver="org.postgresql.Driver"               
   table="Purchase"         
 
@@ -193,8 +203,3 @@ Here is the list of supported function and `.toml` setting.
 brew tap kcwebapply/spg
 brew install spg
 ```
-
-
-
-
-
