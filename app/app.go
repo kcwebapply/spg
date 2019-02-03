@@ -45,19 +45,57 @@ func AppInit() *cli.App {
 			Value: "1.8",
 			Usage: "javaVersion",
 		},
+
+		cli.StringFlag{
+			Name:  "jdbc,db",
+			Value: "",
+			Usage: "(add setting on application.properties and dependency) dbConnectionSetting",
+		},
+
+		cli.StringFlag{
+			Name:  "table,entity",
+			Value: "",
+			Usage: "(generate class file) EntityName",
+		},
+
+		cli.StringFlag{
+			Name:  "driver",
+			Value: "",
+			Usage: "(add setting on application.properties) driverSetting.",
+		},
+
+		cli.StringFlag{
+			Name:  "schedule",
+			Value: "",
+			Usage: "(generating class file) add scheduler Bean Class.",
+		},
+
+		cli.StringFlag{
+			Name:  "zone",
+			Value: "",
+			Usage: "(editing class file) add cron setting on `@Scheduler` annotation.",
+		},
 	}
 
 	app.Commands = []cli.Command{
 		{
-			Name:    "file",
+			Name:    "genf",
 			Aliases: []string{"f"},
 			Usage:   "create spring-boot package from .toml file.",
 			Action:  command.GeneratePackage,
 		},
 
 		{
-			Name:    "init",
-			Aliases: []string{"i"},
+			Name:    "gen",
+			Aliases: []string{"g"},
+			Usage:   "generate package",
+			Action:  command.GeneratePackage,
+			Flags:   initFlag,
+		},
+
+		{
+			Name:    "touch",
+			Aliases: []string{"t"},
 			Usage:   "generate default .toml file.",
 			Action:  command.InitTomlFile,
 			Flags:   initFlag,

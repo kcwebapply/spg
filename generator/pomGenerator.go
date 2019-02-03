@@ -12,9 +12,6 @@ var jpaDependency = Dependency{GroupId: "org.springframework.boot", ArtifactId: 
 var mySQLDependency = Dependency{GroupId: "mysql", ArtifactId: "mysql-connector-java"}
 var postgresDependency = Dependency{GroupId: "org.postgresql", ArtifactId: "postgresql"}
 
-const mysqlDriver = "com.mysql.jdbc.Driver"
-const postgreDriver = "org.postgresql.Driver"
-
 // GeneratePom touch pom.xml
 func GeneratePom(userInput parser.UserInput) {
 
@@ -50,12 +47,15 @@ func setDependencies(content string, userInput parser.UserInput) string {
 	// dbSetting
 	if userInput.Db.Driver != "" {
 		driver := userInput.Db.Driver
+
 		content = setDependency(content, jpaDependency)
-		switch driver {
-		case mysqlDriver:
-			content = setDependency(content, mySQLDependency)
-		case postgreDriver:
+
+		if strings.Contains(driver, "postgres") {
 			content = setDependency(content, postgresDependency)
+		}
+
+		if strings.Contains(driver, "mysql") {
+			content = setDependency(content, mySQLDependency)
 		}
 	}
 	content = strings.Replace(content, "${dependencies}", "", -1)

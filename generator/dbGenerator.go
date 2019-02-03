@@ -11,12 +11,14 @@ import (
 )
 
 // GenerateDB touch entity and repository file.
-func GenerateDB(userInput parser.UserInput) {
+func GenerateDBClass(userInput parser.UserInput) {
+	// do nothing if tableName not designated here.
 	tableName := userInput.Db.Table
 	if &tableName == nil || tableName == "" {
 		fmt.Println("please input table name.")
-		os.Exit(0)
+		return
 	}
+
 	modelPath := userInput.App.Name + path + "/" + getPathformatFromUserInput(userInput) + "/model"
 	err := os.Mkdir(modelPath, 0777)
 	if err != nil {
