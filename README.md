@@ -57,6 +57,31 @@ To do that, I make `spg` commands.
 you can generate `SpringBoot` package with below command very quickly.
 
 ```terminal
+spg gen -g "com.sample" -a "sampleproject" -name "sample-project"
+```
+
+then, you can generate _SpringBootPackage_ like this.
+
+```
+├── pom.xml
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── com
+    │   │       └── sample
+    │   │           └── sampleproject
+    │   │               └── SampleProject.java
+    │   └── resources
+    │       └── application.properties
+    └── test
+        └── java
+            └── com
+                └── sample
+                    └── sampleproject
+                        └── SampleProjectTests.java
+```
+
+```terminal
 $ spg file test.toml
 Generating package spring-boot-generator !
 ```
