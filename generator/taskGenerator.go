@@ -9,7 +9,14 @@ import (
 	template "github.com/kcwebapply/spg/template"
 )
 
-func GenerateTask(userInput parser.UserInput) {
+// GenerateTaskClass generate @schedule annotated task class.
+func GenerateTaskClass(userInput parser.UserInput) {
+	schedule := userInput.Task.Schedule
+	if &schedule == nil || schedule == "" {
+		fmt.Println("please input schedule name.")
+		return
+	}
+
 	taskPath := userInput.App.Name + path + "/" + getPathformatFromUserInput(userInput) + "/task"
 	err := os.Mkdir(taskPath, 0777)
 	if err != nil {

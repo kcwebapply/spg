@@ -9,7 +9,7 @@ import (
 )
 
 // GenerateTest touch mainClass.
-func GenerateTest(userinput parser.UserInput) {
+func GenerateTestClass(userinput parser.UserInput) {
 	appName := userinput.App.Name
 
 	content := template.TEST

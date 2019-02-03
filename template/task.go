@@ -2,7 +2,6 @@ package template
 
 var TASK = `package ${package}.task;
 
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 

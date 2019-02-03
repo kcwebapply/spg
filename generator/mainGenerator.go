@@ -9,7 +9,7 @@ import (
 )
 
 // GenerateMain touch mainClass.
-func GenerateMain(userInput parser.UserInput) {
+func GenerateMainClass(userInput parser.UserInput) {
 	appName := userInput.App.Name
 
 	content := template.MAIN
