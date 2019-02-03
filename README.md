@@ -25,8 +25,10 @@ If you want to generate _SpringBootPackage_  , you can take 2 ways
 - `mvn -B archetype:generate` command.
 - using [spring-initializr](https://start.spring.io/)
 
+<h2>mvn commands</h2>
 But, `mvn` commands needs lots of typing and _generated package_ is only **_JavaPackage_**, it is not **_SpringBootPackage_** .
 
+<h2>Spring-initializr</h2>
 `Spring-initializr` is a good way of generating **_SpringBootPackage_**. 
 
 But `Spring-initializr` can be only used on online.
@@ -34,8 +36,8 @@ But `Spring-initializr` can be only used on online.
 Also,what `Spring-initializr` do about `dependency` is only adding `dependency` tag on `pom.xml` in many case.
 So, If you add `dependency` on `Spring-initializr` and download it, its package may imcomplete one .
 
-Then, What I want is this. Spg is this.
----
+<h2>Then, What I want is this. Spg is this.</h2>
+
 
 - Cli which only takes `few typing`
 - Generate _SpringBootPackage_ .
