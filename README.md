@@ -20,15 +20,18 @@
 
 
 <h1 id="Spg">Why Spg?</h1>
+
 If you want to generate _SpringBootPackage_  , you can take 2 ways
 
 - `mvn -B archetype:generate` command.
 - using [spring-initializr](https://start.spring.io/)
 
 <h2>mvn commands</h2>
+
 But, `mvn` commands needs lots of typing and _generated package_ is only **_JavaPackage_**, it is not **_SpringBootPackage_** .
 
 <h2>Spring-initializr</h2>
+
 `Spring-initializr` is a good way of generating **_SpringBootPackage_**. 
 
 But `Spring-initializr` can be only used on online.
@@ -38,14 +41,12 @@ So, If you add `dependency` on `Spring-initializr` and download it, its package 
 
 <h2>Then, What I want is this. Spg is this.</h2>
 
-
 - Cli which only takes `few typing`
 - Generate _SpringBootPackage_ .
 - Can be used offline.
 - Generate completed application depends on what function (ex, API, DB, Scheduler) we want to use .
 
-
-<h2> </h2>
+To do that, I make `spg` commands.
 
 
 <h1 id="Usage">Usage</h1>
