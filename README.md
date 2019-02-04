@@ -188,10 +188,10 @@ dependency package is also added automatically.
 
 <h2 id='toml'>Generating toml file</h2>
 
-you can generate `.toml` file with `spg init` command.
+you can generate `.toml` file with `spg touch` command.
 
 ```terminal
-$ spg init -artifactId spring-boot-generator -g com.test -n spring-boot-generator
+$ spg touch -artifactId spring-boot-generator -g com.test -n spring-boot-generator
 Generating spg.toml file completed!
 ```
 generate file like this.
@@ -207,9 +207,9 @@ generate file like this.
 <h1 id="Demo">Demo</h1>
 
 ```terminal
-$ spg init -a test -g com.test -name test
+$ spg touch -a test -g com.test -name test
 > Generating spg.toml file completed!
-$ spg file spg.toml
+$ spg genf spg.toml
 > Generating package test completed!
 $ cd test
 $ mvn test
