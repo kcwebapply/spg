@@ -81,13 +81,23 @@ then, you can generate _SpringBootPackage_ like this.
                         └── SampleProjectTests.java
 ```
 
+
+This is the basic components of _SpringBootPackage_ .
+
+you can also generate _SpringBootPackage_ from `.toml` file.
+
 ```terminal
-$ spg file test.toml
+$ spg genf test.toml
 Generating package spring-boot-generator !
 ```
 
+`.toml` file formats are below.
+
 
 <h2 id='toml'>toml Setting file</h2>
+
+
+
 you should touch `.toml` file to select what kinds of  _Java-Class_ files you want to generate automatically.
 
 Here is the example of generating _DB-related_ file.
