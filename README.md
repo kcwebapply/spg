@@ -1,6 +1,6 @@
 # spg
 
-<img  align="right" src="image/spg.png" width="200px">
+
 
 [![GoDoc](https://godoc.org/github.com/kcwebapply/spg?status.svg)](https://godoc.org/github.com/kcwebapply/spg)
 ![Go Report Card](https://goreportcard.com/badge/github.com/kcwebapply/spg)
@@ -8,8 +8,9 @@
 
 **`SPG`** is simple terminal tool for generating **_SpringBoot package_**  and _**Classes**_ easily and quickly.
 
+<img  align="right" src="image/spg.png" width="200px">
 
-<img src="image/sample.gif" width="500">.
+<img src="image/sample.gif" width="500" height="300">.
 
 
 - [Why Spg?](#Spg)
