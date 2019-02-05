@@ -13,12 +13,11 @@
   - [toml Setting file](#toml)
   - [Generated oackage constitution](#const)
   - [Generate toml file](#toml)
-- [Demo](#Demo)
 - [Supported function](#supported)
 - [Installation](#install)
   - [mac Os App](#mac)
 
-
+![sample-demo](image/sample.gif)
 <h1 id="Spg">Why Spg?</h1>
 
 If you want to generate _SpringBootPackage_  , you can take 2 ways
@@ -32,7 +31,7 @@ But, `mvn` commands needs lots of typing and _generated package_ is only **_Java
 
 <h2>Spring-initializr</h2>
 
-`Spring-initializr` is a good way of generating **_SpringBootPackage_**. 
+`Spring-initializr` is a good way of generating **_SpringBootPackage_**.
 
 But `Spring-initializr` can be only used on online.
 
@@ -203,28 +202,6 @@ generate file like this.
   artifactId="spring-boot-generator"
   springVersion="2.1.1.RELEASE"
   javaVersion="1.8"
-```
-<h1 id="Demo">Demo</h1>
-
-```terminal
-$ spg touch -a test -g com.test -name test
-> Generating spg.toml file completed!
-$ spg genf spg.toml
-> Generating package test completed!
-$ cd test
-$ mvn test
-.....
-INFO]
-[INFO] Results:
-[INFO]
-[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
-[INFO]
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time: 10.931 s
-[INFO] Finished at: 2019-01-29T21:16:14+09:00
-[INFO] ------------------------------------------------------------------------
 ```
 
 <h1 id='supported'>supported function</h2>
