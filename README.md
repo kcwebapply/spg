@@ -7,6 +7,11 @@
 [![Release](https://img.shields.io/github/release/kcwebapply/spg.svg?style=flat-square)](https://github.com/kcwebapply/spg/release)
 
 **`SPG`** is simple terminal tool for generating **_SpringBoot package_**  and _**Classes**_ easily and quickly.
+
+
+<img src="image/sample.gif" width="500">.
+
+
 - [Why Spg?](#Spg)
 - [Usage](#Usage)
   - [Generate Package](#Generate)
@@ -17,8 +22,6 @@
 - [Installation](#install)
   - [mac Os App](#mac)
 
-
-<img src="image/sample.gif" width="800">.
 <h1 id="Spg">Why Spg?</h1>
 
 If you want to generate _SpringBootPackage_  , you can take 2 ways
