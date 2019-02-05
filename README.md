@@ -6,9 +6,11 @@
 ![Go Report Card](https://goreportcard.com/badge/github.com/kcwebapply/spg)
 [![Release](https://img.shields.io/github/release/kcwebapply/spg.svg?style=flat-square)](https://github.com/kcwebapply/spg/release)
 
-**`SPG`** is simple terminal tool for generating **_SpringBoot package_**  and _**Classes**_ easily and quickly.
 
 <img  align="right" src="image/spg.png" width="200px">
+
+**`SPG`** is simple terminal tool for generating **_SpringBoot package_**  and _**Classes**_ easily and quickly.
+
 
 <img src="image/sample.gif" width="500" height="300">.
 
