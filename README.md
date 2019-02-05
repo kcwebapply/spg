@@ -17,7 +17,8 @@
 - [Installation](#install)
   - [mac Os App](#mac)
 
-![sample-demo](image/sample.gif)
+
+<img src="image/sample.gif" width="800">.
 <h1 id="Spg">Why Spg?</h1>
 
 If you want to generate _SpringBootPackage_  , you can take 2 ways
