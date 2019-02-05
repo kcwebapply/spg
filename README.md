@@ -1,21 +1,58 @@
 # spg
 
-<img  align="right" src="image/spg.png" width="200px">
+
 
 [![GoDoc](https://godoc.org/github.com/kcwebapply/spg?status.svg)](https://godoc.org/github.com/kcwebapply/spg)
 ![Go Report Card](https://goreportcard.com/badge/github.com/kcwebapply/spg)
 [![Release](https://img.shields.io/github/release/kcwebapply/spg.svg?style=flat-square)](https://github.com/kcwebapply/spg/release)
 
+
+<img  align="right" src="image/spg.png" width="200px">
+
 **`SPG`** is simple terminal tool for generating **_SpringBoot package_**  and _**Classes**_ easily and quickly.
+
+
+<img src="image/sample.gif" width="500" height="300">.
+
+
+- [Why Spg?](#Spg)
 - [Usage](#Usage)
   - [Generate Package](#Generate)
   - [toml Setting file](#toml)
   - [Generated oackage constitution](#const)
   - [Generate toml file](#toml)
-- [Demo](#Demo)
 - [Supported function](#supported)
 - [Installation](#install)
   - [mac Os App](#mac)
+
+<h1 id="Spg">Why Spg?</h1>
+
+If you want to generate _SpringBootPackage_  , you can take 2 ways
+
+- `mvn -B archetype:generate` command.
+- using [spring-initializr](https://start.spring.io/)
+
+<h2>mvn commands</h2>
+
+But, `mvn` commands needs lots of typing and _generated package_ is only **_JavaPackage_**, it is not **_SpringBootPackage_** .
+
+<h2>Spring-initializr</h2>
+
+`Spring-initializr` is a good way of generating **_SpringBootPackage_**.
+
+But `Spring-initializr` can be only used on online.
+
+Also,what `Spring-initializr` do about `dependency` is only adding `dependency` tag on `pom.xml` in many case.
+So, If you add `dependency` on `Spring-initializr` and download it, its package may imcomplete one .
+
+<h2>Then, What I want is this. Spg is this.</h2>
+
+- Cli which only takes `few typing`
+- Generate _SpringBootPackage_ .
+- Can be used offline.
+- Generate completed application depends on what function (ex, API, DB, Scheduler) we want to use .
+
+To do that, I make `spg` commands.
 
 
 <h1 id="Usage">Usage</h1>
@@ -26,24 +63,59 @@
 you can generate `SpringBoot` package with below command very quickly.
 
 ```terminal
-$ spg file test.toml
-Generating package spring-boot-generator !
+spg gen -g "com.sample" -a "sampleproject" -name "sample-project"
+```
+
+then, you can generate _SpringBootPackage_ like this.
+
+```
+├── pom.xml
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── com
+    │   │       └── sample
+    │   │           └── sampleproject
+    │   │               └── SampleProject.java
+    │   └── resources
+    │       └── application.properties
+    └── test
+        └── java
+            └── com
+                └── sample
+                    └── sampleproject
+                        └── SampleProjectTests.java
 ```
 
 
+This is the basic components of _SpringBootPackage_ .
+
+you can also generate _SpringBootPackage_ from `.toml` file.
+
+```terminal
+$ spg genf test.toml
+Generating package spring-boot-generator !
+```
+
+`.toml` file formats are below.
+
+
 <h2 id='toml'>toml Setting file</h2>
+
+
+
 you should touch `.toml` file to select what kinds of  _Java-Class_ files you want to generate automatically.
 
 Here is the example of generating _DB-related_ file.
 
 ```toml
 [App]
-  name="spring-boot-generator" 
+  name="spring-boot-generator"
   groupId="com.kcwebapply"    
   artifactId="spring-sample"  
 
 [Db]
-  jdbc="jdbc:postgresql://localhost:5432/test" 
+  jdbc="jdbc:postgresql://localhost:5432/test"
   driver="org.postgresql.Driver"               
   table="Purchase"                            
 ```
@@ -63,7 +135,7 @@ In this case, package constitution is like this.
 |  |  |  |  |  |--springsample
 |  |  |  |  |  |  |--SpringBootGenerator.java    // generated automatically by default.
 |  |  |  |--model
-|  |  |  |  |--PurchaseEntity.java               // entity generated  by Db setting (refer to Db.Table key on toml file). 
+|  |  |  |  |--PurchaseEntity.java               // entity generated  by Db setting (refer to Db.Table key on toml file).
 |  |  |  |  |--PurchaseRepository.java           // repository generated  by Db setting (refer to Db.Table key on toml file).
 |  |  |--resources
 |  |  |  |--application.properties               // generated automatically by default.
@@ -122,10 +194,10 @@ dependency package is also added automatically.
 
 <h2 id='toml'>Generating toml file</h2>
 
-you can generate `.toml` file with `spg init` command.
+you can generate `.toml` file with `spg touch` command.
 
 ```terminal
-$ spg init -artifactId spring-boot-generator -g com.test -n spring-boot-generator
+$ spg touch -artifactId spring-boot-generator -g com.test -n spring-boot-generator
 Generating spg.toml file completed!
 ```
 generate file like this.
@@ -138,28 +210,6 @@ generate file like this.
   springVersion="2.1.1.RELEASE"
   javaVersion="1.8"
 ```
-<h1 id="Demo">Demo</h1>
-
-```terminal
-$ spg init -a test -g com.test -name test
-> Generating spg.toml file completed!
-$ spg file spg.toml
-> Generating package test completed!
-$ cd test
-$ mvn test
-.....
-INFO]
-[INFO] Results:
-[INFO]
-[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
-[INFO]
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time: 10.931 s
-[INFO] Finished at: 2019-01-29T21:16:14+09:00
-[INFO] ------------------------------------------------------------------------
-```
 
 <h1 id='supported'>supported function</h2>
 
@@ -171,7 +221,7 @@ Here is the list of supported function and `.toml` setting.
 
 ```toml
 [Db]
-  jdbc="jdbc:postgresql://localhost:5432/test" 
+  jdbc="jdbc:postgresql://localhost:5432/test"
   driver="org.postgresql.Driver"               
   table="Purchase"         
 
@@ -193,8 +243,3 @@ Here is the list of supported function and `.toml` setting.
 brew tap kcwebapply/spg
 brew install spg
 ```
-
-
-
-
-
